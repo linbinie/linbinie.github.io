@@ -1,78 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 
 <meta charset="UTF-8">
 <title>Title</title>
 <style>
-  body {
-    background-color: antiquewhite;
-  }
-  .marquee {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    box-sizing: border-box;
-    animation: marquee 5s linear infinite;
-  }
-
-  @keyframes marquee {
-    0% {
-      transform: translateX(100%);
+    body {
+        background-color: antiquewhite;
     }
-    100% {
-      transform: translateX(-100%);
+
+    .marquee {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+        animation: marquee 5s linear infinite;
     }
-  }
 
-  .marquee h1 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 20px;
-    color: blue;
-    border: 5px solid black;
-    width: 100%;
-    height: 100%;
-  }
+    @keyframes marquee {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(-100%);
+        }
+    }
 
-  .rectangle {
-    width: 200px;
-    height: 200px;
-    background-color: blue;
-  }
+    .marquee h1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        padding: 20px;
+        color: blue;
+        border: 5px solid black;
+        width: 100%;
+        height: 100%;
+    }
+
+    .rectangle {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+    }
 </style>
 
 <body>
 
 <script>
-  // 獲取容器元素
-  var container = document.querySelector('.marquee');
+    // 獲取容器元素
+    var container = document.querySelector('.marquee');
 
-  // 設定初始的延遲時間
-  var delay = 1000;
+    // 設定初始的延遲時間
+    var delay = 1000;
 
-  // 定義生成和附加 "持續動態" 文字的函數
-  function addMarqueeText() {
-    var title = document.createElement('h1');
-    title.textContent = '持續動態';
-    container.appendChild(title);
-    delay += 2000; // 延遲時間增加 1 秒
-    title.style.animationDelay = delay + 'ms'; // 設定延遲時間
-  }
+    // 定義生成和附加 "持續動態" 文字的函數
+    function addMarqueeText() {
+        var title = document.createElement('h1');
+        title.textContent = '持續動態';
+        container.appendChild(title);
+        delay += 2000; // 延遲時間增加 1 秒
+        title.style.animationDelay = delay + 'ms'; // 設定延遲時間
+    }
 
-  // 定期生成和附加新的 "持續動態" 文字
-  setInterval(addMarqueeText, 1000);
+    // 定期生成和附加新的 "持續動態" 文字
+    setInterval(addMarqueeText, 1000);
 
 </script>
 
 <div class="marquee">
-  <div class="rectangle"></div>
-  <h1>飄阿</h1>
+    <div class="rectangle"></div>
+    <h1>飄阿</h1>
 </div>
 
 </body>
